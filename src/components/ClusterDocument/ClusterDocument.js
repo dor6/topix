@@ -3,12 +3,12 @@ import './ClusterDocument.css';
 
 
 const RTL_STYLE = {
-    dir: 'rtl',
+    direction: 'rtl',
     textAlign: 'right'
 };
 
 const LTR_STYLE = {
-    dir: 'ltr',
+    direction: 'ltr',
     textAlign: 'left'
 };
 
