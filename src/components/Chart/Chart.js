@@ -65,7 +65,9 @@ const _createEmptyDataset = () => ({
     data: [],
     clusters: [],
     backgroundColor: [],
-    labels: []
+    labels: [],
+    borderColor: '#282c34',
+    //borderWidth: 5
 });
 
 
@@ -99,10 +101,12 @@ const _getDatasts = (dataJson => {
 const _getConfig = (dataJson, setSelectedCluster, canvasCtx) => {
     return {
         type: 'pie',
+        segmentShowStroke: false,
         data: {
             datasets: _getDatasts(dataJson)
         },
         options: {
+            cutoutPercentage: 15,
             responsive: true,
             maintainAspectRatio: false,
             tooltips: {
