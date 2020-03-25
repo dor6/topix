@@ -1,0 +1,13 @@
+.ChartContainer{
+    width: min(70vmin, 100%);
+    height: 70vmin;
+    display: block;
+    position: relative;
+}
+
+.ChartCanvas{
+    width: 100%;
+    height: 100%;
+    max-width: 720px;
+    max-height: 720px;
+}
