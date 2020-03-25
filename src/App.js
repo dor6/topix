@@ -39,6 +39,9 @@ function App() {
 
   return (
     <div className="App" ref={ref}>
+      <title>
+        <CoolText text={TITLE_TEXT} />
+      </title>
       
       <div className="Header">
         <span className="Title">

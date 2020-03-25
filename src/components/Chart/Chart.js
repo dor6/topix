@@ -152,13 +152,15 @@ const _getConfig = (dataJson, setSelectedCluster, canvasCtx) => {
 
                         let angle = _calculatePiePieceMiddleAngle(model)%360;
 
+
+                        if(width >= height){
+                            angle += 90;
+                        }
+
                         if(angle > 90 && angle < 270 ){
                             angle -= 180;
                         }
 
-                        if(width >= height){
-                            angle -= 90;
-                        }
 
 
                         return angle;
