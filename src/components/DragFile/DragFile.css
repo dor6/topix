@@ -1,0 +1,31 @@
+.DragFile{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DragArea{
+    border: 5px #fff dotted;
+    border-radius: 50px;
+    width: 90%;
+    height: 90%;
+    max-width: 1280px;
+    max-height: 720px;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 5vmin;
+    transition: transform 500ms;
+}
+
+.DragArea.Over{
+    border-width: 6px;
+}
+
+.DragArea.Close{
+    transform: scale(0);
+}
