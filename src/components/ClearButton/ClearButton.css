@@ -11,7 +11,7 @@
     align-items: center;
     cursor: pointer;
     border-radius: 100%;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     transition: opacity 200ms;
     animation: ClearButtonEnter .25s;
 }
@@ -40,18 +40,18 @@
 @keyframes ClearButtonEnter{
     0%      { clip-path: polygon(0px 0px ,0px 0px, 18px 0px, 18px 0px, 18px 0px, 18px 0px); }
     25%     { clip-path: polygon(0px 0px ,0px 18px, 18px 18px, 18px 18px, 18px 18px, 18px 0px); }
-    50%     { clip-path: polygon(0px 0px ,0px 36px, 18px 36px, 18px 18px, 18px 18px, 18px 0px); }
-    75%     { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 18px, 18px 18px, 18px 0px); }
-    100%    { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 0px, 18px 0px, 18px 0px); }
+    50%     { clip-path: polygon(0px 0px ,0px 37px, 18px 37px, 18px 18px, 18px 18px, 18px 0px); }
+    75%     { clip-path: polygon(0px 0px ,0px 37px, 37px 37px, 37px 18px, 18px 18px, 18px 0px); }
+    100%    { clip-path: polygon(0px 0px ,0px 37px, 37px 37px, 37px 0px, 18px 0px, 18px 0px); }
 }
 
 @keyframes ClearButtonExit{
     100%    { clip-path: polygon(0px 0px ,0px 0px, 18px 0px, 18px 0px, 18px 0px, 18px 0px); }
     87.5%   { clip-path: polygon(0px 0px ,0px 18px, 18px 18px, 18px 18px, 18px 18px, 18px 0px); }
-    75%     { clip-path: polygon(0px 0px ,0px 36px, 18px 36px, 18px 18px, 18px 18px, 18px 0px); }
-    62.5%   { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 18px, 18px 18px, 18px 0px); }
-    50%     { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 0px, 18px 0px, 18px 0px); }
-    0%      { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 0px, 18px 0px, 18px 0px); }
+    75%     { clip-path: polygon(0px 0px ,0px 37px, 18px 37px, 18px 18px, 18px 18px, 18px 0px); }
+    62.5%   { clip-path: polygon(0px 0px ,0px 37px, 37px 37px, 37px 18px, 18px 18px, 18px 0px); }
+    50%     { clip-path: polygon(0px 0px ,0px 37px, 37px 37px, 37px 0px, 18px 0px, 18px 0px); }
+    0%      { clip-path: polygon(0px 0px ,0px 37px, 37px 37px, 37px 0px, 18px 0px, 18px 0px); }
 }
 
 @keyframes ClearButtonContentEnter{
