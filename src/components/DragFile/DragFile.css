@@ -19,19 +19,19 @@
     align-items: center;
     font-weight: bold;
     font-size: 5vmin;
+    transition: transform 500ms;
 }
 
 .DragArea.Over{
     border-width: 6px;
 }
 
-.DragArea.Close{
-    transform: scale(0);
-    animation: DragAreaEnter 500ms reverse;
-}
-
 .DragArea.Enter{
     animation: DragAreaEnter 500ms;
+}
+
+.DragArea.Close{
+    transform: scale(0);
 }
 
 @keyframes DragAreaEnter{

@@ -91,7 +91,7 @@ export function DragFile({setJson, rerendered}) {
     let dragAreaClasses = ["DragArea"];
     if(over)        dragAreaClasses.push("Over");
     if(close)       dragAreaClasses.push("Close");
-    if(rerendered)  dragAreaClasses.push("Enter");
+    if(rerendered && !close)  dragAreaClasses.push("Enter");
 
     return (
         <div className="DragFile">
