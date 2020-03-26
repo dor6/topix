@@ -8,11 +8,14 @@ const PIE_TITLE_TEXT = 'I Barfed This Pie For You';
 const CONTENT_TITLE_TEXT = 'Here Is The Pie Contents';
 const CONTENT_SUB_TITLE_TEXT = 'You Know, For Allergies & Such';
 
-export function Results({dataJson}) {
+export function Results({dataJson, clearResults}) {
     const [selectedCluster, setSelectedCluster] = useState(dataJson.clusters[0]);
 
+    let classes = ["Results"];
+    if(clearResults)    classes.push('Close');
+
     return (
-        <div className="Results">
+        <div className={classes.join(' ')}>
 
             <div className="PieSection">
                 <div className="PieTitle">

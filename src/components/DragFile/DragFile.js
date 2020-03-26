@@ -22,7 +22,7 @@ const _validateJson = (json) => {
     }
 };
 
-export function DragFile({setJson}) {
+export function DragFile({setJson, rerendered}) {
     const [over, setOver] = useState(false);
     const [invalidFile, setInvalidFile] = useState(false);
     const [digesting, setDigesting] = useState(false);
@@ -89,13 +89,16 @@ export function DragFile({setJson}) {
 
 
     let dragAreaClasses = ["DragArea"];
-    if(over)    dragAreaClasses.push("Over");
-    if(close)   dragAreaClasses.push("Close");
+    if(over)        dragAreaClasses.push("Over");
+    if(close)       dragAreaClasses.push("Close");
+    if(rerendered)  dragAreaClasses.push("Enter");
 
     return (
         <div className="DragFile">
             <div className={dragAreaClasses.join(' ')} ref={ref}>
-                <CoolText text={over ?  DRAG_OVER_TEXT : digesting ? DIGESTING_TEXT : invalidFile ? INVALID_FILE_TEXT : DRAG_HERE_TEXT}/>
+                <CoolText   text={over ?  DRAG_OVER_TEXT : digesting ? DIGESTING_TEXT : invalidFile ? INVALID_FILE_TEXT : DRAG_HERE_TEXT}
+                            delay={(!over && !digesting && !invalidFile && rerendered) ? 500 : 0}  
+                />
             </div>
         </div>
     );

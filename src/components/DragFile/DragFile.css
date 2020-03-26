@@ -19,7 +19,6 @@
     align-items: center;
     font-weight: bold;
     font-size: 5vmin;
-    transition: transform 500ms;
 }
 
 .DragArea.Over{
@@ -28,4 +27,14 @@
 
 .DragArea.Close{
     transform: scale(0);
+    animation: DragAreaEnter 500ms reverse;
+}
+
+.DragArea.Enter{
+    animation: DragAreaEnter 500ms;
+}
+
+@keyframes DragAreaEnter{
+    0%      { transform: scale(0); }
+    100%    { transform: scale(1); }
 }

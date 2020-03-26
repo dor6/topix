@@ -1,0 +1,66 @@
+.ClearButton{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    font-weight: bold;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    transition: opacity 200ms;
+    animation: ClearButtonEnter .25s;
+}
+
+.ClearButton:not(.Close):hover{
+    opacity: 0.7;
+}
+
+.ClearButtonContent{
+    animation: ClearButtonContentEnter .5s;
+    font-family: fantasy;
+}
+
+.ClearButton.Close{
+    animation: ClearButtonExit 1s;
+    clip-path: polygon(0px 0px ,0px 0px, 18px 0px, 18px 0px, 18px 0px, 18px 0px);
+    cursor: default;
+}
+
+.ClearButton.Close > .ClearButtonContent{
+    animation: ClearButtonContentExit .5s;
+    opacity: 0;
+}
+
+
+@keyframes ClearButtonEnter{
+    0%      { clip-path: polygon(0px 0px ,0px 0px, 18px 0px, 18px 0px, 18px 0px, 18px 0px); }
+    25%     { clip-path: polygon(0px 0px ,0px 18px, 18px 18px, 18px 18px, 18px 18px, 18px 0px); }
+    50%     { clip-path: polygon(0px 0px ,0px 36px, 18px 36px, 18px 18px, 18px 18px, 18px 0px); }
+    75%     { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 18px, 18px 18px, 18px 0px); }
+    100%    { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 0px, 18px 0px, 18px 0px); }
+}
+
+@keyframes ClearButtonExit{
+    100%    { clip-path: polygon(0px 0px ,0px 0px, 18px 0px, 18px 0px, 18px 0px, 18px 0px); }
+    87.5%   { clip-path: polygon(0px 0px ,0px 18px, 18px 18px, 18px 18px, 18px 18px, 18px 0px); }
+    75%     { clip-path: polygon(0px 0px ,0px 36px, 18px 36px, 18px 18px, 18px 18px, 18px 0px); }
+    62.5%   { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 18px, 18px 18px, 18px 0px); }
+    50%     { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 0px, 18px 0px, 18px 0px); }
+    0%      { clip-path: polygon(0px 0px ,0px 36px, 36px 36px, 36px 0px, 18px 0px, 18px 0px); }
+}
+
+@keyframes ClearButtonContentEnter{
+    0%      { opacity: 0; }
+    50%     { opacity: 0; }
+    100%    { opacity: 1; }
+}
+
+@keyframes ClearButtonContentExit{
+    0%      { opacity: 1; }
+    100%    { opacity: 0; }
+}
