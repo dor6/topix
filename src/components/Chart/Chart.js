@@ -58,7 +58,6 @@ const _getPiePieceLabel = ({dataset, dataIndex}) => {
 };
 
 const _getPiePieceModel = ({dataset, dataIndex}) => {
-    console.info(dataset, dataIndex);
     return dataset._meta[Object.keys(dataset._meta)[0]].data[dataIndex]._model;
 };
 

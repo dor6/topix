@@ -17,6 +17,9 @@ const _getFileFromEvent = (e) => {
 const _fileIsValid = (file) => (file.type === "application/json" || file.type.indexOf("text") === 0);
 
 const _validateJson = (json) => {
+    // TODO: Validate The Json Better.
+    // now just validating that the higher attributes are arrays.
+    // needs to add validation of the inwards of the json.
     if( !Array.isArray(json["clusters"]) || !Array.isArray(json["documents"]) ){
         throw new Error("Json Is Invalid");
     }
