@@ -5,7 +5,7 @@ import 'chartjs-plugin-datalabels';
 
 import ColorGiver from '../../utils/ColorGiver';
 
-
+const LABELS_FONT_FAMILY = 'Arial';
 const TEXT_DIMENSION_MULTIPLIER = 0.7;
 const MAX_FONT_SIZE = 40;
 const RAD_TO_DEGREE_MULTIPLIER = 57.296;
@@ -46,7 +46,7 @@ const _getOptimalFontSizeForText = (canvasCtx, text, {width, height}) => {
 
     while(textWidth < width && fontSize < height && fontSize < MAX_FONT_SIZE){
         fontSize ++;
-        canvasCtx.font = `${fontSize}px Arial`;
+        canvasCtx.font = `${fontSize}px ${LABELS_FONT_FAMILY}`;
         textWidth = canvasCtx.measureText(text).width;
     }
 
@@ -66,8 +66,7 @@ const _createEmptyDataset = () => ({
     clusters: [],
     backgroundColor: [],
     labels: [],
-    borderColor: '#282c34',
-    //borderWidth: 5
+    borderColor: '#282c34'
 });
 
 
@@ -175,7 +174,8 @@ const _getConfig = (dataJson, setSelectedCluster, canvasCtx) => {
                             const dimensions = _calculateTextPiePieceDimensions(_getPiePieceModel(context));
                             const fontSize = _getOptimalFontSizeForText(canvasCtx, text, dimensions);
                             return fontSize;
-                        })(context)
+                        })(context),
+                        family: LABELS_FONT_FAMILY
                     })
                     
                 }

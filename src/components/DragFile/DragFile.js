@@ -31,7 +31,7 @@ export function DragFile({setJson}) {
     const ref = useRef(null);
 
     useEffect(() => {
-        if(ref && ref.current){
+        if(ref && ref.current && !digesting && !close){
             const element = ref.current;
 
             const handleDragEnter = () => {
@@ -85,7 +85,7 @@ export function DragFile({setJson}) {
                 element.removeEventListener('drop', handleDrop);
             };
         }
-    }, [ref, setInvalidFile, setOver, setJson]);
+    }, [ref, setInvalidFile, setOver, setJson, digesting, close]);
 
 
     let dragAreaClasses = ["DragArea"];
